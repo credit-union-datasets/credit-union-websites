@@ -12,8 +12,18 @@ Contains website addresses scraped from the United States National Credit Union 
 
 1. Download "List of Active Federally Insured Credit Unions" from https://ncua.gov/files/publications/analysis/ to [data/raw/ncua.gov/](data/raw/ncua.gov/).
     - For example, <https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list-september-2025.zip>
-2. Unzip it, convert Excel file to csv, and extract the NCUA charter numbers to [data/processed/charter-numbers.csv](data/processed/charter-numbers.csv)
-3. Run [scripts/scrape-all-cu-websites.sh](scripts/scrape-all-cu-websites.sh) which:
+2. Unzip it
+3. Convert to CSV:
+    - install prerequisites: `pip install pandas openpyxl`
+    - convert XLS to CSV using pandas:
+      ```python3
+      import pandas as pd
+      df = pd.read_excel('FederallyInsuredCreditUnions_2025q3.xlsx')
+      df.to_csv('FederallyInsuredCreditUnions_2025q3.csv', index=False)
+      ```
+
+3. Extract the NCUA charter numbers to [data/processed/charter-numbers.csv](data/processed/charter-numbers.csv)
+4. Run [scripts/scrape-all-cu-websites.sh](scripts/scrape-all-cu-websites.sh) which:
     - loops over the credit union charter numbers CSV and for each number:
       - runs [scripts/get-cu-website.sh](scripts/get-cu-website.sh) to look up the credit union detail using the NCUA "Research a Credit Union" tool API and extracts the website address
     - saves website addresses to [processed/scraped-websites.csv](processed/scraped-websites.csv)
