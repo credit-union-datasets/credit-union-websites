@@ -7,7 +7,7 @@ https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list
 
 Methodology:
 1. Download "List of Active Federally Insured Credit Unions" from https://ncua.gov/files/publications/analysis/ to [data/raw/ncua.gov/](data/raw/ncua.gov/).
-  - For example, <https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list-september-2025.zip>
+    - For example, <https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list-september-2025.zip>
 2. Unzip it, convert Excel file to csv, and extract the NCUA charter numbers to [data/processed/charter-numbers.csv](data/processed/charter-numbers.csv)
 3. Run [scripts/scrape-all-cu-websites.sh](scripts/scrape-all-cu-websites.sh) which:
   - loops over the credit union charter numbers CSV and for each number:
