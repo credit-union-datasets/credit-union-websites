@@ -1,7 +1,6 @@
 Contains website addresses scraped from the United States National Credit Union Association (NCUA)
 
-- The data source is: ncua.gov
-https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list-september-2025.zip
+- The data source is: http://ncua.gov/
 - Scraped on: 24 Dec 2025
 - Disclaimer: authors not affiliated with NCUA
 
