@@ -31,7 +31,7 @@ START_FROM=""
 # Paths
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-CHARTER_FILE="$PROJECT_DIR/data/processed/charter-numbers"
+CHARTER_FILE="$PROJECT_DIR/data/processed/charter-numbers.csv"
 OUTPUT_FILE="$PROJECT_DIR/data/processed/scraped-websites.csv"
 ERROR_LOG="$PROJECT_DIR/data/processed/scraping-errors.log"
 PROGRESS_FILE="$PROJECT_DIR/data/processed/scraping-progress.txt"
