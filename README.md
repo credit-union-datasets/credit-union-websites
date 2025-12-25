@@ -1,1 +1,15 @@
-# usa-federally-insured-credit-unions
+Contains website addresses scraped from the United States National Credit Union Association (NCUA)
+
+- The data source is: ncua.gov
+https://ncua.gov/files/publications/analysis/federally-insured-credit-union-list-september-2025.zip
+- Scraped on: 24 Dec 2025
+- Disclaimer: authors not affiliated with NCUA
+
+Methodology:
+1. Download "List of Active Federally Insured Credit Unions" from https://ncua.gov/analysis/credit-union-corporate-call-report-data to [data/raw/ncua.gov/](data/raw/ncua.gov/).
+2. Unzip it, convert Excel file to csv, and extract the NCUA charter numbers to [data/processed/charter-numbers.csv](data/processed/charter-numbers.csv)
+3. Run [scripts/scrape-all-cu-websites.sh](scripts/scrape-all-cu-websites.sh) which:
+  - loops over the credit union charter numbers CSV and for each number:
+    - runs [scripts/get-cu-website.sh](scripts/get-cu-website.sh) to look up the credit union detail using the NCUA "Research a Credit Union" tool API and extracts the website address
+  - saves website addresses to processed/scraped-websites.csv
+    - if the website address was not available, notes it as UNKNOWN
