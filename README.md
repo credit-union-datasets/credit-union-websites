@@ -26,7 +26,7 @@ Contains website addresses scraped from the United States National Credit Union 
 ├── data
 │   ├── processed
 │   │   ├── charter-numbers.csv
-│   │   └── scraped-websites.csv  <-- these are the website addresses (keyed by NCUA charter number)
+│   │   └── scraped-websites.csv  <-- website addresses
 │   └── raw
 │       └── ncua.gov
 │           ├── federally-insured-credit-union-list-september-2025.zip
@@ -35,3 +35,5 @@ Contains website addresses scraped from the United States National Credit Union 
     ├── get-cu-website.sh
     └── scrape-all-cu-websites.sh
 ```
+
+The website addresses in scraped-websites.csv are keyed by the NCUA charter number.
