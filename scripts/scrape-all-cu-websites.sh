@@ -71,10 +71,18 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Validate required files
+# Auto-download charter numbers if missing (sourced from credit-union-ncua repo)
+CHARTER_URL="https://raw.githubusercontent.com/credit-union-datasets/credit-union-ncua/main/data/processed/charter-numbers.csv"
+
 if [[ ! -f "$CHARTER_FILE" ]]; then
-    echo "Error: Charter numbers file not found: $CHARTER_FILE"
-    exit 1
+    echo "Charter numbers file not found locally. Downloading from credit-union-ncua repo..."
+    mkdir -p "$(dirname "$CHARTER_FILE")"
+    if curl -fsSL "$CHARTER_URL" -o "$CHARTER_FILE"; then
+        echo "Downloaded charter-numbers.csv successfully."
+    else
+        echo "Error: Failed to download charter-numbers.csv from $CHARTER_URL"
+        exit 1
+    fi
 fi
 
 if [[ ! -f "$SCRAPER_SCRIPT" ]]; then
