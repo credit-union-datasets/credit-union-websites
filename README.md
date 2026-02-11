@@ -35,3 +35,4 @@ The website addresses in scraped-websites.csv are keyed by the NCUA charter numb
 
 - [NCUA Data for Federally Insured Credit Unions](https://github.com/credit-union-datasets/credit-union-ncua) - NCUA listing data (charter numbers, raw data). This is a dependency of the scraping workflow: the scraper auto-downloads charter numbers from this repo.
 - [Credit Union Membership Data](https://github.com/credit-union-datasets/credit-union-membership) - membership data scraped from credit union websites, keyed by charter number.
+- [Credit Union HYSA Rates](https://github.com/credit-union-datasets/credit-union-hysa) - high-yield savings account rates at credit unions, keyed by charter number.
